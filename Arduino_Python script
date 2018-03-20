@@ -1,0 +1,24 @@
+Python script
+
+import serial
+
+ser=serial.Serial('COM11',9600,timeout=1)
+
+while True:
+    data=ser.readline().decode('ascii')
+    print(data)
+int x;
+
+Arduino ide
+void setup() {
+  // put your setup code here, to run on
+  pinMode(7,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:~~~~~~~~~
+x=digitalRead(7);
+Serial.println(x);
+delay(1000);
+}
